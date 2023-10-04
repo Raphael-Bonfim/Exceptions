@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
 
-        Cadastrar("");
+        //Cadastrar("");
 
         var array = new int[3];
 
@@ -19,7 +19,7 @@ class Program
 
         try
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < array.Length + 1; i++)
             {
                 // System.IndexOutOfRangeException = Tipo de Exceção
                 Console.WriteLine(array[i]);
@@ -37,13 +37,17 @@ class Program
         {
             Console.WriteLine(ex.Message);
             Console.WriteLine("Não encontrei o index na lista");
-        }       
+        }
 
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             Console.WriteLine("Ops, algo deu errado :/ ...");
         }
+
+        //FINALLY, sempre passa nesse final
+
+        finally { Console.WriteLine("Chegou ao fim!"); }
 
         //Disparando Exceções
 
@@ -63,7 +67,7 @@ class Program
             }
         }
     }
-    
+
     //Exceções Personalizadas
     public class MinhaException : Exception
     {
@@ -73,6 +77,6 @@ class Program
         }
 
         public DateTime QuandoAconteceu { get; set; }
-    }    
+    }
 }
 
